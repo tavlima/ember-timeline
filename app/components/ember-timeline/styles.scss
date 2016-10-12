@@ -1,0 +1,12 @@
+// Absolute values
+$timelineMargin: 0.5em;
+
+& {
+  position: relative;
+  margin: $timelineMargin;
+
+  .timeline-vbox-workaround * {
+    visibility: hidden;
+    position: static;
+  }
+}

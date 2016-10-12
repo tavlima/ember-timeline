@@ -1,0 +1,10 @@
+<!-- div class="timeline-phase-main">&nbsp;</div -->
+{{ember-timeline-phase model=backgroundPhaseModel dayslice=daySlice start=minDate}}
+
+{{#each models as |model|}}
+  {{component (concat 'ember-timeline-' model.type) model=model dayslice=daySlice start=minDate}}
+{{/each}}
+
+<div class="timeline-vbox-workaround">
+  {{ember-timeline-milestone model=placeholderMilestoneModel dayslice=daySlice start=minDate}}
+</div>

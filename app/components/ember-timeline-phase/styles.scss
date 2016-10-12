@@ -1,0 +1,12 @@
+// Absolute values
+$phaseHeight: 1.5vw;
+
+// Size ratios
+$phaseDiamondRatio: 2;
+
+& {
+  display: inline-block;
+  position: absolute;
+  bottom: $phaseHeight * ($phaseDiamondRatio - 1) / 2;
+  height: $phaseHeight;
+}

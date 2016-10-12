@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'apple-ember-timeline',
+    modulePrefix: 'ember-timeline',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',

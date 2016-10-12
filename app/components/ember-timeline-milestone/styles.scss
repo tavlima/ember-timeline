@@ -1,0 +1,41 @@
+// Absolute values
+$phaseHeight: 1.5vw;
+$titleFontSize: 1.2vw;
+
+// Size ratios
+$phaseDiamondRatio: 2;
+$phaseConnectorRatio: 0.5;
+$titleDateRatio: 0.8;
+$titleConnectorRatio: 0.8;
+
+// Calculated values
+$diamondHeight: $phaseHeight * $phaseDiamondRatio;
+$dateFontSize: $titleFontSize * $titleDateRatio;
+$connectorFontSize: $titleFontSize * $titleConnectorRatio;
+
+& {
+  display: inline-block;
+  position: absolute;
+  -webkit-transform: translate(-50%, 0);
+  text-align: center;
+
+  .timeline-milestone-title {
+    font-size: $titleFontSize;
+    font-weight: bold;
+  }
+
+  .timeline-milestone-date {
+    font-size: $dateFontSize;
+  }
+
+  .timeline-milestone-connector {
+    font-size: $connectorFontSize;
+  }
+
+  .timeline-milestone-diamond {
+    img {
+      width: $diamondHeight;
+      line-height: $diamondHeight;
+    }
+  }
+}
