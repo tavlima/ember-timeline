@@ -1,9 +1,9 @@
 // Absolute values
-$phaseHeight: 1.5vw;
-$timelineMargin: 0.5em;
+$phaseHeight: 1vw !default;
+$timelineMargin: 0.5em !default;
 
 // Size ratios
-$phaseSliderRatio: 0.6;
+$phaseSliderRatio: 0.6 !default;
 
 .ember-timeline-slider {
   margin: $timelineMargin;

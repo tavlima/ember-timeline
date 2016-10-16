@@ -1,17 +1,17 @@
 // Absolute values
-$phaseHeight: 1.5vw;
-$titleFontSize: 1.2vw;
+$phaseHeight: 1vw !default;
+$titleFontSize: 1.3vw !default;
 
 // Size ratios
-$phaseDiamondRatio: 2;
-$phaseConnectorRatio: 0.5;
-$titleDateRatio: 0.8;
-$titleConnectorRatio: 0.8;
+$phaseDiamondRatio: 2 !default;
+$phaseConnectorRatio: 0.5 !default;
+$titleDateRatio: 0.88 !default;
+$titleConnectorRatio: 0.8 !default;
 
 // Calculated values
-$diamondHeight: $phaseHeight * $phaseDiamondRatio;
-$dateFontSize: $titleFontSize * $titleDateRatio;
-$connectorFontSize: $titleFontSize * $titleConnectorRatio;
+$diamondHeight: $phaseHeight * $phaseDiamondRatio !default;
+$dateFontSize: $titleFontSize * $titleDateRatio !default;
+$connectorFontSize: $titleFontSize * $titleConnectorRatio !default;
 
 .ember-timeline-milestone {
   display: inline-block;
@@ -22,20 +22,19 @@ $connectorFontSize: $titleFontSize * $titleConnectorRatio;
   .timeline-milestone-title {
     font-size: $titleFontSize;
     font-weight: bold;
+    color: #686868;
   }
 
   .timeline-milestone-date {
     font-size: $dateFontSize;
-  }
-
-  .timeline-milestone-connector {
-    font-size: $connectorFontSize;
+    color: #919191;
   }
 
   .timeline-milestone-diamond {
     img {
       width: $diamondHeight;
       line-height: $diamondHeight;
+      // #B7B7B7
     }
   }
 }

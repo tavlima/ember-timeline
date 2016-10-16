@@ -1,8 +1,8 @@
 // Absolute values
-$phaseHeight: 1.5vw;
+$phaseHeight: 1vw !default;
 
 // Size ratios
-$phaseDiamondRatio: 2;
+$phaseDiamondRatio: 2 !default;
 
 .ember-timeline-phase {
   display: inline-block;
