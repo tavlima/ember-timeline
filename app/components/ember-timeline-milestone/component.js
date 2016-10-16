@@ -1,10 +1,14 @@
 import Ember from 'ember';
 
+const {
+  computed
+} = Ember;
+
 export default Ember.Component.extend({
   classNames: ['ember-timeline-milestone'],
   attributeBindings: ['style:style'],
 
-  style: Ember.computed('model', 'start', 'dayslice', function() {
+  style: computed('model', 'start', 'dayslice', function() {
     var modelStart = moment(this.get('model.start'));
     var timelineStart = moment(this.get('start'));
 

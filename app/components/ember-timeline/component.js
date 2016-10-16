@@ -1,20 +1,24 @@
 import Ember from 'ember';
 
+const {
+  computed
+} = Ember;
+
 export default Ember.Component.extend({
   classNames: ['ember-timeline'],
 
-  totalDuration: Ember.computed('minDate', 'maxDate', function() {
+  totalDuration: computed('minDate', 'maxDate', function() {
     var min = moment(this.get('minDate'));
     var max = moment(this.get('maxDate'));
 
     return moment.duration(max.diff(min)).asDays();
   }),
 
-  daySlice: Ember.computed('totalDuration', function() {
+  daySlice: computed('totalDuration', function() {
     return 100 / this.get('totalDuration');
   }),
 
-  backgroundPhaseModel: Ember.computed('minDate', 'totalDuration', function() {
+  backgroundPhaseModel: computed('minDate', 'totalDuration', function() {
     return {
       color: '#eaeaea',
       start: this.get('minDate'),
@@ -22,7 +26,7 @@ export default Ember.Component.extend({
     };
   }),
 
-  placeholderMilestoneModel: Ember.computed('minDate', 'totalDuration', function() {
+  placeholderMilestoneModel: computed('minDate', 'totalDuration', function() {
     return {
       title: 'PLACEHOLDER',
       start: this.get('minDate')
