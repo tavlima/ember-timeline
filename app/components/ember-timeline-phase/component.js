@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNames: ['ember-timeline-phase-d71973e3'],
+  classNames: ['ember-timeline-phase'],
   attributeBindings: ['style:style'],
 
   style: Ember.computed('model', 'start', 'dayslice', function() {

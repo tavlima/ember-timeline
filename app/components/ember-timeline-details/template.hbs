@@ -1,9 +1,5 @@
-<h3>Master</h3>
-<span>{{format-date masterMinDate}} - {{format-date masterMaxDate}}</span>
 {{ember-timeline models=models minDate=masterMinDate maxDate=masterMaxDate}}
 
-{{!ember-timeline-slider min=masterMinDate max=masterMaxDate start=zoomMinDate end=zoomMaxDate}}
+{{ember-timeline-slider min=masterMinDate max=masterMaxDate start=zoomMinDate end=zoomMaxDate}}
 
-<h3>Zoom</h3>
-<span>{{format-date zoomMinDate}} - {{format-date zoomMaxDate}}</span>
 {{ember-timeline models=zoomModels minDate=zoomMinDate maxDate=zoomMaxDate}}

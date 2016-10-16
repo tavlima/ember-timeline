@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  classNames: ['ember-timeline'],
+
   totalDuration: Ember.computed('minDate', 'maxDate', function() {
     var min = moment(this.get('minDate'));
     var max = moment(this.get('maxDate'));
@@ -14,7 +16,7 @@ export default Ember.Component.extend({
 
   backgroundPhaseModel: Ember.computed('minDate', 'totalDuration', function() {
     return {
-      color: '#eee',
+      color: '#eaeaea',
       start: this.get('minDate'),
       duration: this.get('totalDuration')
     };

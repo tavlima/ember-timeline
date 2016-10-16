@@ -1,9 +1,10 @@
 // Absolute values
 $timelineMargin: 0.5em;
 
-& {
+.ember-timeline {
   position: relative;
   margin: $timelineMargin;
+  overflow-x: hidden;
 
   .timeline-vbox-workaround * {
     visibility: hidden;

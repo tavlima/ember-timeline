@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNames: ['ember-timeline-milestone-41d6605f'],
+  classNames: ['ember-timeline-milestone'],
   attributeBindings: ['style:style'],
 
   style: Ember.computed('model', 'start', 'dayslice', function() {

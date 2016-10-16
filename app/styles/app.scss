@@ -1,4 +1,7 @@
 @import "bootstrap";
-@import "bootstrap/theme";
 
-@import "pod-styles";
+body {
+  padding-top: 20px;
+}
+
+@import "pods";

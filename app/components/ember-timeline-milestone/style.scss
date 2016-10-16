@@ -13,7 +13,7 @@ $diamondHeight: $phaseHeight * $phaseDiamondRatio;
 $dateFontSize: $titleFontSize * $titleDateRatio;
 $connectorFontSize: $titleFontSize * $titleConnectorRatio;
 
-& {
+.ember-timeline-milestone {
   display: inline-block;
   position: absolute;
   -webkit-transform: translate(-50%, 0);

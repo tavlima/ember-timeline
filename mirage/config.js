@@ -28,7 +28,7 @@ export default function() {
           title: 'Phase #5-#10',
           start: new Date(2016, 0, 5),
           end: new Date(2016, 0, 10),
-          color: 'blue'
+          color: '#4dd963'
         }
       }, {
         type: 'timeline-events',

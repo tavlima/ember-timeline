@@ -1,0 +1,39 @@
+// Absolute values
+$phaseHeight: 1.5vw;
+$timelineMargin: 0.5em;
+
+// Size ratios
+$phaseSliderRatio: 0.6;
+
+.ember-timeline-slider {
+  margin: $timelineMargin;
+
+  .ui-rangeSlider {
+    padding-top: 0px;
+    height: $phaseHeight * $phaseSliderRatio;
+
+    .ui-rangeSlider-container {
+      height: 100%;
+      // background: none !important;
+      // box-shadow: none !important;
+      // -moz-box-shadow: none !important;
+
+      .ui-rangeSlider-bar {
+        height: 100%;
+        margin: 0px;
+      }
+
+      .ui-rangeSlider-innerBar {
+        height: 100%;
+        margin: 0px;
+        background: none !important;
+      }
+
+      .ui-rangeSlider-handle {
+        height: 100%;
+        width: 1vw;
+        background: none !important;
+      }
+    }
+  }
+}

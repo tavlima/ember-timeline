@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  classNames: ['ember-timeline-details'],
+
   eventsMinDate: Ember.computed('models', function() {
     return this.get('models').mapBy('start').reduce(function(a, b) {
       return Math.min(a, b);
