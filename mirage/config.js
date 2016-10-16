@@ -9,8 +9,7 @@ export default function() {
         attributes: {
           title: 'Mile #1',
           start: new Date(2016, 0, 1),
-          end: new Date(2016, 0, 1),
-          color: null
+          end: new Date(2016, 0, 1)
         }
       }, {
         type: 'timeline-events',
@@ -18,8 +17,7 @@ export default function() {
         attributes: {
           title: 'Mile #2',
           start: new Date(2016, 0, 2),
-          end: new Date(2016, 0, 2),
-          color: null
+          end: new Date(2016, 0, 2)
         }
       }, {
         type: 'timeline-events',
@@ -36,8 +34,7 @@ export default function() {
         attributes: {
           title: 'Mile #4',
           start: new Date(2016, 0, 4),
-          end: new Date(2016, 0, 4),
-          color: null
+          end: new Date(2016, 0, 4)
         }
       }]
     };

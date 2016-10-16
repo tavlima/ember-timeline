@@ -7,13 +7,13 @@ const {
 export default Ember.Component.extend({
   classNames: ['ember-timeline-details'],
 
-  eventsMinDate: computed('models', function() {
+  eventsMinDate: computed('models.@each.start', function() {
     return this.get('models').mapBy('start').reduce(function(a, b) {
       return Math.min(a, b);
     });
   }),
 
-  eventsMaxDate: computed('models', function() {
+  eventsMaxDate: computed('models.@each.end', function() {
     return this.get('models').mapBy('end').reduce(function(a, b) {
       return Math.max(a, b);
     });
@@ -42,7 +42,7 @@ export default Ember.Component.extend({
     return this.get('masterMaxDate').clone().add(this.get('masterDays') * -0.3, 'days');
   }),
 
-  zoomModels: computed('zoomMinDate', 'zoomMaxDate', 'models', function() {
+  zoomModels: computed('zoomMinDate', 'zoomMaxDate', 'models.@each.start', 'models.@each.end', function() {
     var min = this.get('zoomMinDate');
     var max = this.get('zoomMaxDate');
 

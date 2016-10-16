@@ -6,6 +6,8 @@
     "moment": "^2.15.1",
     "jquery": "~1.12",
     "jquery-mousewheel": "^3.1.13",
-    "jquery-ui": "~1.10"
+    "jquery-ui": "~1.10",
+    "bootstrap-datepicker": "^1.6.4",
+    "mjolnic-bootstrap-colorpicker": "^2.3.6"
   }
 }

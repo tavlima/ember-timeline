@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="col-md-4">Task name</div>
+    <div class="col-md-2">Start</div>
+    <div class="col-md-2">End</div>
+    <div class="col-md-2">Duration</div>
+    <div class="col-md-2">Banding</div>
+
+    {{#each models as |model|}}
+      {{timeline-event-form model=model}}
+    {{/each}}
+
+    {{timeline-event-form model=newModel}}
+  </div>
+</div>
+
+{{yield}}

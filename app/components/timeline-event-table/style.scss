@@ -1,0 +1,21 @@
+.timeline-event-table {
+  .col-md-3, .col-md-2, .col-md-1 {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+    display: table;
+  }
+
+  .input-group-alt {
+    display: table;
+  }
+
+  .input-group-addon-alt {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0px 2px;
+  }
+}

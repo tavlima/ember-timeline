@@ -1,0 +1,34 @@
+<div class="col-md-4 col-xs-2">
+  <div class="form-group">
+    <label class="control-label sr-only" for="title">Task Name</label>
+    {{input type="text" class="form-control" value=model.title placeholder="New Task"}}
+  </div>
+</div>
+
+<div class="col-md-2 col-xs-2">
+  <div class="form-group">
+    <label class="control-label sr-only" for="start">Start</label>
+    {{bootstrap-datepicker class="form-control" value=model.start customParser=momentToDate todayHighlight=true}}
+  </div>
+</div>
+
+<div class="col-md-2 col-xs-2">
+  <div class="form-group">
+    <label class="control-label sr-only" for="end">End</label>
+    {{bootstrap-datepicker class="form-control" value=model.end customParser=momentToDate todayHighlight=true startDate=model.start}}
+  </div>
+</div>
+
+<div class="col-md-2 col-xs-2">
+  <div class="form-group">
+    <label class="control-label sr-only" for="duration">Duration</label>
+    {{input type="number" class="form-control" min="0" value=model.duration}}
+  </div>
+</div>
+
+<div class="col-md-2 col-xs-2">
+  <div class="form-group timeline-event-form-group-colorpicker">
+    <label class="control-label sr-only" for="color">Banding</label>
+    {{ember-bootstrap-colorpicker color=model.color}}
+  </div>
+</div>

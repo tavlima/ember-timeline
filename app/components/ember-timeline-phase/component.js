@@ -8,7 +8,7 @@ export default Ember.Component.extend({
   classNames: ['ember-timeline-phase'],
   attributeBindings: ['style:style'],
 
-  style: computed('model', 'start', 'dayslice', function() {
+  style: computed('model.start', 'model.duration', 'model.color', 'start', 'dayslice', function() {
     var modelStart = moment(this.get('model.start'));
     var timelineStart = moment(this.get('start'));
 

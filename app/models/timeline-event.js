@@ -1,15 +1,20 @@
 import DS from 'ember-data';
 import Ember from 'ember';
 
+const {
+  computed,
+  observer
+} = Ember;
+
+const defaultColor = '#deadbe';
+
 export default DS.Model.extend({
   title: DS.attr('string'),
   start: DS.attr('date'),
   end: DS.attr('date'),
-  color: DS.attr('string', {
-    defaultValue: null
-  }),
+  color: DS.attr('string'),
 
-  duration: Ember.computed('start', 'end', {
+  duration: computed('start', 'end', {
     get() {
       var start = moment(this.get('start'));
       var end = moment(this.get('end'));
@@ -17,12 +22,23 @@ export default DS.Model.extend({
       return moment.duration(end.diff(start)).asDays();
     },
     set(key, value) {
-      this.set('end', moment(this.get('start')).add(value, 'days').toDate());
-      return value;
+      let newEnd = moment(this.get('start')).add(value, 'days').toDate();
+
+      this.set('end', newEnd);
+
+      return parseInt(value);
     }
   }),
 
-  type: Ember.computed('duration', function() {
+  type: computed('start', 'end', 'duration', function() {
     return this.get('duration') === 0 ? 'milestone' : 'phase';
+  }),
+
+  checkDuration: observer('start', 'end', 'duration', function() {
+    if (this.get('duration') === 0) {
+      this.set('color', undefined);
+    } else if (! this.get('color')){
+      this.set('color', defaultColor)
+    }
   })
 });

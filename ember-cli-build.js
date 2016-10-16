@@ -13,7 +13,9 @@ module.exports = function(defaults) {
 
   app.import('bower_components/moment/moment.js');
 
-  app.import('bower_components/jquery-ui/ui/jquery-ui.js');
+  app.import('bower_components/jquery-ui/ui/jquery.ui.core.js');
+  app.import('bower_components/jquery-ui/ui/jquery.ui.widget.js');
+  app.import('bower_components/jquery-ui/ui/jquery.ui.mouse.js');
   app.import('bower_components/jquery-ui/themes/cupertino/jquery-ui.min.css');
 
   app.import('bower_components/jquery-mousewheel/jquery.mousewheel.js');
@@ -26,5 +28,14 @@ module.exports = function(defaults) {
     destDir: '/assets/icons-classic'
   });
 
-  return app.toTree(jQRangeSliderAssets);
+  app.import('bower_components/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js');
+  app.import('bower_components/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css');
+
+  var bootstrapCollorpickerAssets = new Funnel('bower_components/mjolnic-bootstrap-colorpicker', {
+    srcDir: '/dist/img/bootstrap-colorpicker',
+    include: ['*.png'],
+    destDir: '/img/bootstrap-colorpicker'
+  });
+
+  return app.toTree([jQRangeSliderAssets, bootstrapCollorpickerAssets]);
 };

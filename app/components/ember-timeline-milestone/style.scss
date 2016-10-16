@@ -19,22 +19,21 @@ $connectorFontSize: $titleFontSize * $titleConnectorRatio !default;
   -webkit-transform: translate(-50%, 0);
   text-align: center;
 
-  .timeline-milestone-title {
+  &-title {
     font-size: $titleFontSize;
     font-weight: bold;
     color: #686868;
   }
 
-  .timeline-milestone-date {
+  &-date {
     font-size: $dateFontSize;
     color: #919191;
   }
 
-  .timeline-milestone-diamond {
+  &-diamond {
     img {
       width: $diamondHeight;
       line-height: $diamondHeight;
-      // #B7B7B7
     }
   }
 }
