@@ -1,22 +1,62 @@
 import Ember from 'ember';
 
+const {
+  computed,
+  run
+} = Ember;
+
 export default Ember.Component.extend({
   classNames: ['timeline-event-form'],
+
+  _startDisabled: computed('model.title', function() {
+    return !this.get('model.title') ? true : null;
+  }),
+
+  _endDisabled: computed('_startDisabled', 'model.start', function() {
+    return (this.get('_startDisabled') || !this.get('model.start')) ? true : null;
+  }),
+
+  _duration: computed('model.duration', 'model.start', 'model.end', {
+    get() {
+      return (this.get('model.start') && this.get('model.end')) ? this.get('model.duration') : null;
+    },
+    set(key, value) {
+      this.set('model.duration', value);
+      return value;
+    }
+  }),
 
   momentToDate(date) {
     return moment(date).toDate();
   },
 
+  startChangeListener: function() {
+    let start = this.get('model.start');
+
+    if (start && !this.get('model.end')) {
+      this.set('model.end', start);
+    }
+  }.observes('model.start'),
+
   modelChangeListener: function() {
-    this.sendAction('submit', this.get('model'));
-  }.observes('model.title', 'model.start', 'model.end', 'model.color'),
+    run.once(this, '_change');
+  }.observes('model.start', 'model.end', 'model.color'),
 
   actions: {
-    submit: function() {
-      this.sendAction('submit', this.get('model'));
-    },
     delete: function(model) {
       this.sendAction('delete', this.get('model'));
+    },
+
+    focusOut: function(data) {
+      this._change();
+    }
+  },
+
+  _change: function() {
+    let model = this.get('model');
+
+    if (model.validate()) {
+      this.sendAction('change', model);
     }
   }
 });

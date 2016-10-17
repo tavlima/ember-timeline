@@ -5,13 +5,23 @@ export default Ember.Route.extend({
   rangeEnd: new Date(2016, 0, 31),
 
   model() {
-    return this.get('store').findAll('event');
+    return Ember.RSVP.hash({
+      events: this.get('store').query('event', {}),
+      newEvent: this.get('store').createRecord('event')
+    });
   },
 
   actions: {
     saveEvent(event) {
-      event.save();
-      // this.get('store').createRecord('event', event).save();
+      if (event.get('hasDirtyAttributes')) {
+        let isNew = event.get('isNew');
+
+        event.save().then(() => {
+          if (isNew) {
+            this.controller.set('model.newEvent', this.get('store').createRecord('event'));
+          }
+        });
+      }
     },
 
     deleteEvent(event) {
@@ -19,6 +29,21 @@ export default Ember.Route.extend({
 
       if (confirmation) {
         event.destroyRecord();
+      }
+    },
+
+    willTransition(transition) {
+      let model = this.controller.get('newEvent');
+
+      if (model.get('hasDirtyAttributes')) {
+        let confirmation = confirm("Your changes haven't saved yet. Would you like to leave this form?");
+
+        if (confirmation) {
+          model.rollbackAttributes();
+
+        } else {
+          transition.abort();
+        }
       }
     }
   }

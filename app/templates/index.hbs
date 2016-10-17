@@ -1,3 +1,3 @@
-{{ember-timeline-details models=model}}
-{{timeline-event-table models=model newModel=newModel delete="deleteEvent" submit="saveEvent"}}
+{{ember-timeline-details models=model.events}}
+{{timeline-event-table models=model.events newModel=model.newEvent delete="deleteEvent" change="saveEvent"}}
 {{outlet}}

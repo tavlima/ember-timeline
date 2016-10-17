@@ -7,10 +7,10 @@
     <div class="col-md-2">Banding</div>
 
     {{#each models as |model|}}
-      {{timeline-event-form model=model delete="delete" submit="submit"}}
+      {{timeline-event-form model=model delete="delete" change="change"}}
     {{/each}}
 
-    {{timeline-event-form model=newModel submit="submit"}}
+    {{timeline-event-form model=newModel change="change"}}
   </div>
 </div>
 

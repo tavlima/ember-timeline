@@ -3,7 +3,8 @@ import Ember from 'ember';
 
 const {
   computed,
-  observer
+  observer,
+  isEmpty
 } = Ember;
 
 const defaultColor = '#deadbe';
@@ -40,5 +41,18 @@ export default DS.Model.extend({
     } else if (! this.get('color')) {
       this.set('color', defaultColor);
     }
-  })
+  }),
+
+  validate: function() {
+    let title = this.get('title'),
+        start = this.get('start'),
+        end = this.get('end'),
+        duration = this.get('duration'),
+        color = this.get('color');
+
+    return !isEmpty(title) &&
+            !isEmpty(start) &&
+            !isEmpty(end) &&
+            (duration === 0 || (duration > 0 && color));
+  }
 });
