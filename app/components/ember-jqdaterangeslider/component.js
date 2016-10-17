@@ -76,7 +76,7 @@ export default Ember.Component.extend({
           'symmetricPositionning', 'type', 'valueLabels',
           'wheelMode', 'wheelSpeed');
 
-    $this.rangeSlider(properties).on("valuesChanging", (evt, data) => {
+    $this.dateRangeSlider(properties).on("valuesChanging", (evt, data) => {
         run(this, function() {
           this.set('start', data.values.min);
           this.set('end', data.values.max);
@@ -107,14 +107,14 @@ export default Ember.Component.extend({
         deltaBounds = (bounds.max - bounds.min) - (_bounds.max - _bounds.min),
         zoom = deltaBounds / this.get('step');
 
-    this.$().rangeSlider("bounds", min, max);
+    this.$().dateRangeSlider("bounds", min, max);
     // this.$().rangeSlider("values", newStart, newEnd);
-    this.$().rangeSlider('zoomIn', zoom);
+    this.$().dateRangeSlider('zoomIn', zoom);
 
     this.set('_bounds', bounds);
   }.observes('bounds'),
 
   _destroy: function() {
-    this.$().rangeSlider('destroy');
+    this.$().dateRangeSlider('destroy');
   }.on('willDestroyElement')
 });

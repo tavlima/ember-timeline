@@ -37,8 +37,8 @@ export default DS.Model.extend({
   checkDuration: observer('start', 'end', 'duration', function() {
     if (this.get('duration') === 0) {
       this.set('color', undefined);
-    } else if (! this.get('color')){
-      this.set('color', defaultColor)
+    } else if (! this.get('color')) {
+      this.set('color', defaultColor);
     }
   })
 });

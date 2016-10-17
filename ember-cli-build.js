@@ -19,7 +19,14 @@ module.exports = function(defaults) {
   app.import('bower_components/jquery-ui/themes/cupertino/jquery-ui.min.css');
 
   app.import('bower_components/jquery-mousewheel/jquery.mousewheel.js');
-  app.import('vendor/jQRangeSlider-5.7.2/jQRangeSlider-min.js');
+  app.import('vendor/jQRangeSlider-5.7.2/jQRangeSliderMouseTouch.js');
+  app.import('vendor/jQRangeSlider-5.7.2/jQRangeSliderDraggable.js');
+  app.import('vendor/jQRangeSlider-5.7.2/jQRangeSliderBar.js');
+  app.import('vendor/jQRangeSlider-5.7.2/jQRangeSliderHandle.js');
+  app.import('vendor/jQRangeSlider-5.7.2/jQRangeSliderLabel.js');
+  app.import('vendor/jQRangeSlider-5.7.2/jQRangeSlider.js');
+  app.import('vendor/jQRangeSlider-5.7.2/jQDateRangeSliderHandle.js');
+  app.import('vendor/jQRangeSlider-5.7.2/jQDateRangeSlider.js');
   app.import('vendor/jQRangeSlider-5.7.2/css/classic.css');
 
   var jQRangeSliderAssets = new Funnel('vendor/jQRangeSlider-5.7.2', {
