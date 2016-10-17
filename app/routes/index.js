@@ -1,9 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  rangeStart: new Date(2016, 0, 1),
-  rangeEnd: new Date(2016, 0, 31),
-
   model() {
     return Ember.RSVP.hash({
       events: this.get('store').query('event', {}),
@@ -16,7 +13,7 @@ export default Ember.Route.extend({
       if (event.get('hasDirtyAttributes')) {
         let isNew = event.get('isNew');
 
-        event.save().then(() => {
+        return event.save().then(() => {
           if (isNew) {
             this.controller.set('model.newEvent', this.get('store').createRecord('event'));
           }
@@ -28,7 +25,7 @@ export default Ember.Route.extend({
       let confirmation = confirm('Are you sure?');
 
       if (confirmation) {
-        event.destroyRecord();
+        return event.destroyRecord();
       }
     },
 

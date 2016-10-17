@@ -30,24 +30,16 @@ export default Ember.Component.extend({
     return moment(date).toDate();
   },
 
-  startChangeListener: function() {
-    let start = this.get('model.start');
-
-    if (start && !this.get('model.end')) {
-      this.set('model.end', start);
-    }
-  }.observes('model.start'),
-
   modelChangeListener: function() {
     run.once(this, '_change');
   }.observes('model.start', 'model.end', 'model.color'),
 
   actions: {
-    delete: function(model) {
+    delete: function() {
       this.sendAction('delete', this.get('model'));
     },
 
-    focusOut: function(data) {
+    focusOut: function() {
       this._change();
     }
   },

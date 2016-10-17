@@ -23,13 +23,13 @@ export default Ember.Component.extend({
   eventsMinDate: computed('models.@each.start', function() {
     return this.get('models').mapBy('start').reduce(function(a, b) {
       return Math.min(a, b);
-    });
+    }, moment().add(-3, 'days'));
   }),
 
   eventsMaxDate: computed('models.@each.end', function() {
     return this.get('models').mapBy('end').reduce(function(a, b) {
       return Math.max(a, b);
-    });
+    }, moment().add(3, 'days'));
   }),
 
   masterMinDate: computed('eventsMinDate', function() {
@@ -40,7 +40,7 @@ export default Ember.Component.extend({
     return moment(this.get('eventsMaxDate')).add(1, 'days');
   }),
 
-  zoomModels: computed('zoomMinDate', 'zoomMaxDate', function() {
+  zoomModels: computed('zoomMinDate', 'zoomMaxDate', 'models.@each.id', function() {
     var min = this.get('zoomMinDate');
     var max = this.get('zoomMaxDate');
 
