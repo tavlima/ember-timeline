@@ -1,0 +1,11 @@
+.ember-timeline, .ember-timeline-beam, .ember-timeline-slider {
+  margin-bottom: 0px !important;
+}
+
+.ember-timeline, .ember-timeline-beam {
+  margin-top: 0px !important;
+}
+
+.ember-timeline:last-child {
+  margin-top: -5px !important;
+}

@@ -3,9 +3,8 @@ $timelineMargin: 0.5em !default;
 
 .ember-timeline-beam {
   width: 100%;
-  height: 100px;
+  height: 50px;
   margin: $timelineMargin;
-  margin-top: 0px !important;
 
   &-line {
     stroke: #aaa;
@@ -17,8 +16,4 @@ $timelineMargin: 0.5em !default;
     stroke: #aaa;
     stroke-width: 4;
   }
-}
-
-.ember-timeline-slider {
-  margin-bottom: 0px !important;
 }
