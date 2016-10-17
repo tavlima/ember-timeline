@@ -6,5 +6,19 @@ export default Ember.Route.extend({
 
   model() {
     return this.get('store').findAll('timeline-event');
+  },
+
+  actions: {
+    saveEvent(event) {
+      this.get('store').createRecord('timeline-event', event).save();
+    },
+
+    deleteEvent(event) {
+      let confirmation = confirm('Are you sure?');
+
+      if (confirmation) {
+        event.destroyRecord();
+      }
+    }
   }
 });
