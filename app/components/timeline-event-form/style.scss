@@ -3,17 +3,24 @@
     .input-group-addon {
       background: none !important;
 
-      &:not(:first-child):not(:last-child) {
+      &:last-child {
+        border-left-width: 1px !important;
+        border-left-color: $input-group-addon-border-color;
+        border-left-style: solid;
+      }
+
+      &:not(:first-child) {
+        border-left-width: 1px !important;
         border-radius: $input-border-radius !important;
 
         i {
           width: 80 - (2 * $padding-base-horizontal);
           height: $input-height-base - (2 * $padding-base-vertical);
-          border-radius: 4px;
+          border-radius: $input-border-radius;
         }
       }
 
-      &:last-child {
+      &:not(.input-group-addon-colorpicker):last-child {
         border: 0px !important;
         padding-left: 2px !important;
         padding-right: 2px !important;

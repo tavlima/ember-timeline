@@ -30,8 +30,10 @@
   <div class="form-group timeline-event-form-group-colorpicker">
     <label class="control-label sr-only" for="color">Banding</label>
     {{#ember-bootstrap-colorpicker color=model.color component=".ember-bootstrap-colorpicker-addon"}}
-      <span class="input-group-addon"><span class="ember-bootstrap-colorpicker-addon"><i>&nbsp;</i></span></span>
-      <span class="input-group-addon"><button type="button" class="close" aria-label="Close" {{action 'delete' model}}><span aria-hidden="true">&times;</span></button></span>
+      <span class="input-group-addon input-group-addon-colorpicker"><span class="ember-bootstrap-colorpicker-addon"><i>&nbsp;</i></span></span>
+      {{#if model.id }}
+        <span class="input-group-addon input-group-addon-close"><button type="button" class="close" aria-label="Close" {{action 'delete' model}}><span aria-hidden="true">&times;</span></button></span>
+      {{/if}}
     {{/ember-bootstrap-colorpicker}}
   </div>
 </div>
