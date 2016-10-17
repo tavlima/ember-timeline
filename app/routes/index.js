@@ -5,12 +5,13 @@ export default Ember.Route.extend({
   rangeEnd: new Date(2016, 0, 31),
 
   model() {
-    return this.get('store').findAll('timeline-event');
+    return this.get('store').findAll('event');
   },
 
   actions: {
     saveEvent(event) {
-      this.get('store').createRecord('timeline-event', event).save();
+      event.save();
+      // this.get('store').createRecord('event', event).save();
     },
 
     deleteEvent(event) {
