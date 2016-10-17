@@ -4,7 +4,7 @@ $timelineMargin: 0.5em !default;
 .ember-timeline {
   position: relative;
   margin: $timelineMargin;
-  overflow-x: hidden;
+  overflow: hidden;
 
   .timeline-vbox-workaround * {
     visibility: hidden;

@@ -14,7 +14,7 @@ $dateFontSize: $titleFontSize * $titleDateRatio !default;
 $connectorFontSize: $titleFontSize * $titleConnectorRatio !default;
 
 .ember-timeline-milestone {
-  display: inline-block;
+  display: inline-table;
   position: absolute;
   -webkit-transform: translate(-50%, 0);
   text-align: center;
