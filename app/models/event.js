@@ -1,13 +1,12 @@
 import DS from 'ember-data';
 import Ember from 'ember';
+import randomColor from 'npm:random-color';
 
 const {
   computed,
   observer,
   isEmpty
 } = Ember;
-
-const defaultColor = '#deadbe';
 
 export default DS.Model.extend({
   title: DS.attr('string'),
@@ -36,10 +35,10 @@ export default DS.Model.extend({
   }),
 
   checkDuration: observer('start', 'end', 'duration', function() {
-    if (this.get('duration') === 0) {
+    if (!this.get('duration') || !this.get('end')) {
       this.set('color', undefined);
     } else if (! this.get('color')) {
-      this.set('color', defaultColor);
+      this.set('color', randomColor(0.3, 0.99).hexString());
     }
   }),
 

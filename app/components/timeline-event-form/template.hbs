@@ -8,14 +8,14 @@
 <div class="col-md-2 col-xs-2">
   <div class="form-group">
     <label class="control-label sr-only" for="start">Start</label>
-    {{bootstrap-datepicker class="form-control" value=model.start customParser=momentToDate todayHighlight=true disabled=_startDisabled}}
+    {{bootstrap-datepicker class="form-control" value=model.start customParser=momentToDate todayHighlight=true autoclose=true disabled=_startDisabled}}
   </div>
 </div>
 
 <div class="col-md-2 col-xs-2">
   <div class="form-group">
     <label class="control-label sr-only" for="end">End</label>
-    {{bootstrap-datepicker class="form-control" value=model.end customParser=momentToDate todayHighlight=true startDate=model.start disabled=_endDisabled}}
+    {{bootstrap-datepicker class="form-control" value=model.end customParser=momentToDate todayHighlight=true startDate=model.start autoclose=true disabled=_endDisabled}}
   </div>
 </div>
 

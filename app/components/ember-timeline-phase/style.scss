@@ -9,4 +9,5 @@ $phaseDiamondRatio: 2 !default;
   position: absolute;
   bottom: $phaseHeight * ($phaseDiamondRatio - 1) / 2;
   height: $phaseHeight;
+  z-index: -10;
 }
