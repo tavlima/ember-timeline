@@ -3,7 +3,9 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model() {
     return Ember.RSVP.hash({
-      events: this.get('store').query('event', {}),
+      events: this.get('store').query('event', {
+        orderBy : 'start'
+      }),
       newEvent: this.get('store').createRecord('event')
     });
   },
