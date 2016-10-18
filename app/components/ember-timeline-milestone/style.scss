@@ -1,10 +1,9 @@
 // Absolute values
-$diamondHeight: 5vh !default;
-$titleFontSize: 1.3vw !default;
+$diamondWidth: 2em !default;
+$titleFontSize: 1em !default;
 
 // Size ratios
-$titleDateRatio: 0.88 !default;
-$titleConnectorRatio: 0.8 !default;
+$titleDateRatio: 0.8 !default;
 
 // Calculated values
 $dateFontSize: $titleFontSize * $titleDateRatio !default;
@@ -28,8 +27,8 @@ $dateFontSize: $titleFontSize * $titleDateRatio !default;
 
   &-diamond {
     img {
-      width: $diamondHeight;
-      line-height: $diamondHeight;
+      width: $diamondWidth;
+      line-height: $diamondWidth * 1.21;
     }
   }
 }

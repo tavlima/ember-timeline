@@ -1,5 +1,5 @@
 // Absolute values
-$diamondHeight: 5vh !default;
+$diamondWidth: 2m!default;
 $timelineMargin: 0.5em !default;
 
 // Size ratios
@@ -10,7 +10,7 @@ $diamondSliderRatio: 1.27 !default;
 
   .ui-rangeSlider {
     padding-top: 0px;
-    height: $diamondHeight / $diamondSliderRatio;
+    height: $diamondWidth / $diamondSliderRatio;
 
     .ui-rangeSlider-container {
       height: 100%;
