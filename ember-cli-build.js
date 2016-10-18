@@ -11,13 +11,16 @@ module.exports = function(defaults) {
     }
   });
 
+  // Moment.js
   app.import('bower_components/moment/moment.js');
 
+  // jQuery UI
   app.import('bower_components/jquery-ui/ui/jquery.ui.core.js');
   app.import('bower_components/jquery-ui/ui/jquery.ui.widget.js');
   app.import('bower_components/jquery-ui/ui/jquery.ui.mouse.js');
   app.import('bower_components/jquery-ui/themes/cupertino/jquery-ui.min.css');
 
+  // jQDateRangeSlider
   app.import('bower_components/jquery-mousewheel/jquery.mousewheel.js');
   app.import('vendor/jQRangeSlider-5.7.2/jQRangeSliderMouseTouch.js');
   app.import('vendor/jQRangeSlider-5.7.2/jQRangeSliderDraggable.js');
@@ -35,6 +38,7 @@ module.exports = function(defaults) {
     destDir: '/assets/icons-classic'
   });
 
+  // Bootstrap Colorpicker
   app.import('bower_components/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js');
   app.import('bower_components/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css');
 
@@ -43,6 +47,9 @@ module.exports = function(defaults) {
     include: ['*.png'],
     destDir: '/img/bootstrap-colorpicker'
   });
+
+  // Hammer.js
+  app.import('bower_components/hammerjs/hammer.js')
 
   return app.toTree([jQRangeSliderAssets, bootstrapCollorpickerAssets]);
 };

@@ -51,8 +51,8 @@ export default Ember.Component.extend({
           shouldHideA = !dontOverlap && a.center <= b.center,
           shouldHideB = !dontOverlap && b.center < a.center;
 
-          $(a.node).css('visibility', shouldHideA ? 'hidden' : 'inherit');
-          $(b.node).css('visibility', shouldHideB ? 'hidden' : 'inherit');
+          Ember.$(a.node).css('visibility', shouldHideA ? 'hidden' : 'inherit');
+          Ember.$(b.node).css('visibility', shouldHideB ? 'hidden' : 'inherit');
 
           return b;
     });
