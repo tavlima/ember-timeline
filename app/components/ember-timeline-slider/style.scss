@@ -1,16 +1,16 @@
 // Absolute values
-$phaseHeight: 1vw !default;
+$diamondHeight: 5vh !default;
 $timelineMargin: 0.5em !default;
 
 // Size ratios
-$phaseSliderRatio: 0.6 !default;
+$diamondSliderRatio: 1.27 !default;
 
 .ember-timeline-slider {
   margin: $timelineMargin;
 
   .ui-rangeSlider {
     padding-top: 0px;
-    height: $phaseHeight * $phaseSliderRatio;
+    height: $diamondHeight / $diamondSliderRatio;
 
     .ui-rangeSlider-container {
       height: 100%;

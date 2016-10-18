@@ -1,13 +1,16 @@
 // Absolute values
-$phaseHeight: 1vw !default;
+$diamondHeight: 5vh !default;
 
 // Size ratios
-$phaseDiamondRatio: 2 !default;
+$diamondPhaseRatio: 3.5 !default;
+
+// Calculated values
+$phaseHeight: $diamondHeight / $diamondPhaseRatio !default;
 
 .ember-timeline-phase {
   display: inline-block;
   position: absolute;
-  bottom: $phaseHeight * ($phaseDiamondRatio - 1) / 2;
+  bottom: ($diamondHeight - $phaseHeight) / 2;
   height: $phaseHeight;
   z-index: -10;
 }

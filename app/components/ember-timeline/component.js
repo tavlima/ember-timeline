@@ -34,12 +34,7 @@ export default Ember.Component.extend({
   }),
 
   _updateMilestonesVisibility: function() {
-    let self = this,
-      $this = this.$(),
-      $milestoneTexts = $this.find('.ember-timeline-milestone .ember-timeline-milestone-texts'),
-      $phaseBars = $this.find('.ember-timeline-phase:not(:first-child)');
-
-    let milestoneObjs = $milestoneTexts.map((_, o) => {
+    this.$().find('.ember-timeline-milestone .ember-timeline-milestone-texts').map((_, o) => {
       let rect = o.getBoundingClientRect();
 
       return {
@@ -47,16 +42,8 @@ export default Ember.Component.extend({
         center: (rect.left + rect.right) / 2,
         node: o
       };
-    });
 
-    let phaseObjs = $phaseBars.map((_, o) => {
-      return {
-        x: o.getBoundingClientRect().left,
-        node: o
-      }
-    });
-
-    milestoneObjs.sort((a, b) => {
+    }).sort((a, b) => {
       return (a.x[0] - b.x[0]) / Math.abs(a.x[0] - b.x[0]) || 0;
 
     }).get().reduce((a, b) => {
@@ -70,5 +57,5 @@ export default Ember.Component.extend({
           return b;
     });
 
-  }.on('didRender'),
+  }.on('didRender')
 });

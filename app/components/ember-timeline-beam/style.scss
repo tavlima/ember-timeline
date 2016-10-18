@@ -7,13 +7,13 @@ $timelineMargin: 0.5em !default;
   margin: $timelineMargin;
 
   &-line {
-    stroke: #aaa;
+    stroke: #b7b7b7;
     stroke-width: 2;
     stroke-dasharray: 4 2;
   }
 
   &-terminal {
-    stroke: #aaa;
+    stroke: #b7b7b7;
     stroke-width: 4;
   }
 }

@@ -1,17 +1,13 @@
 // Absolute values
-$phaseHeight: 1vw !default;
+$diamondHeight: 5vh !default;
 $titleFontSize: 1.3vw !default;
 
 // Size ratios
-$phaseDiamondRatio: 2 !default;
-$phaseConnectorRatio: 0.5 !default;
 $titleDateRatio: 0.88 !default;
 $titleConnectorRatio: 0.8 !default;
 
 // Calculated values
-$diamondHeight: $phaseHeight * $phaseDiamondRatio !default;
 $dateFontSize: $titleFontSize * $titleDateRatio !default;
-$connectorFontSize: $titleFontSize * $titleConnectorRatio !default;
 
 .ember-timeline-milestone {
   display: inline-table;
