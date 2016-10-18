@@ -14,9 +14,6 @@ $diamondSliderRatio: 1.27 !default;
 
     .ui-rangeSlider-container {
       height: 100%;
-      // background: none !important;
-      // box-shadow: none !important;
-      // -moz-box-shadow: none !important;
 
       .ui-rangeSlider-bar {
         height: 100%;
@@ -32,7 +29,7 @@ $diamondSliderRatio: 1.27 !default;
       .ui-rangeSlider-handle {
         height: 100%;
         width: 1vw;
-        background: none !important;
+        background: #b7b7b7;
       }
     }
   }

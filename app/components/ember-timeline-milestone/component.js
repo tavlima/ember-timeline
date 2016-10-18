@@ -14,6 +14,6 @@ export default Ember.Component.extend({
 
     var left = moment.duration(modelStart.diff(timelineStart)).asDays() * this.get('dayslice');
 
-    return "left: " + left + "%";
+    return Ember.String.htmlSafe("left: " + left + "%");
   })
 });

@@ -15,6 +15,6 @@ export default Ember.Component.extend({
     var width = this.get('model.duration') * this.get('dayslice');
     var left = moment.duration(modelStart.diff(timelineStart)).asDays() * this.get('dayslice');
 
-    return "width: " + width + "%; left: " + left + "%; background-color: " + this.get('model.color');
+    return Ember.String.htmlSafe("width: " + width + "%; left: " + left + "%; background-color: " + this.get('model.color'));
   }),
 });
