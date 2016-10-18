@@ -1,32 +1,32 @@
-<div class="col-md-4 col-xs-2">
+<div class="col-sm-5 col-xs-12">
   <div class="form-group">
     <label class="control-label sr-only" for="title">Task Name</label>
     {{input type="text" class="form-control" value=model.title placeholder="New Task" focus-out="focusOut"}}
   </div>
 </div>
 
-<div class="col-md-2 col-xs-2">
+<div class="col-sm-2 col-xs-6">
   <div class="form-group">
     <label class="control-label sr-only" for="start">Start</label>
-    {{bootstrap-datepicker class="form-control" value=model.start customParser=momentToDate todayHighlight=true autoclose=true disabled=_startDisabled}}
+    {{bootstrap-datepicker class="form-control" value=model.start customParser=momentToDate todayHighlight=true autoclose=true disabled=_startDisabled placeholder="Start Date"}}
   </div>
 </div>
 
-<div class="col-md-2 col-xs-2">
+<div class="col-sm-2 col-xs-6">
   <div class="form-group">
     <label class="control-label sr-only" for="end">End</label>
-    {{bootstrap-datepicker class="form-control" value=model.end customParser=momentToDate todayHighlight=true startDate=model.start autoclose=true disabled=_endDisabled}}
+    {{bootstrap-datepicker class="form-control" value=model.end customParser=momentToDate todayHighlight=true startDate=model.start autoclose=true disabled=_endDisabled placeholder="End Date"}}
   </div>
 </div>
 
-<div class="col-md-2 col-xs-2">
+<div class="col-sm-1 col-xs-6">
   <div class="form-group">
-    <label class="control-label sr-only" for="duration">Duration</label>
-    {{input type="number" class="form-control" min="0" value=_duration}}
+    <label class="control-label sr-only" for="duration">Days</label>
+    {{input type="number" class="form-control" min="0" value=_duration placeholder="Days"}}
   </div>
 </div>
 
-<div class="col-md-2 col-xs-2">
+<div class="col-sm-2 col-xs-6">
   <div class="form-group timeline-event-form-group-colorpicker">
     <label class="control-label sr-only" for="color">Banding</label>
     {{#ember-bootstrap-colorpicker color=model.color component=".ember-bootstrap-colorpicker-addon"}}

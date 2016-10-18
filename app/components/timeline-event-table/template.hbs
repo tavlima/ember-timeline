@@ -1,10 +1,12 @@
 <div class="panel panel-default">
   <div class="panel-body">
-    <div class="col-md-4">Task name</div>
-    <div class="col-md-2">Start</div>
-    <div class="col-md-2">End</div>
-    <div class="col-md-2">Duration</div>
-    <div class="col-md-2">Banding</div>
+    <div class="hidden-xs">
+      <div class="col-sm-5 col-xs-12">Task name</div>
+      <div class="col-sm-2 col-xs-6">Start</div>
+      <div class="col-sm-2 col-xs-6">End</div>
+      <div class="col-sm-1 col-xs-6">Days</div>
+      <div class="col-sm-2 col-xs-6">Banding</div>
+    </div>
 
     {{#each models as |model|}}
       {{timeline-event-form model=model delete="delete" change="change"}}
