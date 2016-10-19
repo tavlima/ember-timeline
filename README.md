@@ -11,6 +11,7 @@ Demo: https://ember-timeline-demo.firebaseapp.com
 * Figure out a better way to layout the "tableform" on small screens ([some ideas from a similar problem](https://css-tricks.com/responsive-data-table-roundup))
 * ~~Improve the label collision detection algorithm and hidding strategy~~
 * Replace the beam implementation for something more performant (jsPlumb?)
+* Apply validations at the model level ([ember-changeset-validations](https://github.com/DockYard/ember-changeset-validations) seems to be a good option)
 
 ## Prerequisites
 
