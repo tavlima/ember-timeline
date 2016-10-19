@@ -34,28 +34,63 @@ export default Ember.Component.extend({
   }),
 
   _updateMilestonesVisibility: function() {
-    this.$().find('.ember-timeline-milestone .ember-timeline-milestone-texts').map((_, o) => {
+    let sortedMilestones = this.$().find('.ember-timeline-milestone .ember-timeline-milestone-texts').map((_, o) => {
       let rect = o.getBoundingClientRect();
 
       return {
         x: [rect.left, rect.right],
         center: (rect.left + rect.right) / 2,
-        node: o
+        node: o,
+        overlaps: []
       };
 
     }).sort((a, b) => {
       return (a.x[0] - b.x[0]) / Math.abs(a.x[0] - b.x[0]) || 0;
-
-    }).get().reduce((a, b) => {
-      let dontOverlap = (a.x[1] < b.x[0]) || (b.x[1] < a.x[0]),
-          shouldHideA = !dontOverlap && a.center <= b.center,
-          shouldHideB = !dontOverlap && b.center < a.center;
-
-          Ember.$(a.node).css('visibility', shouldHideA ? 'hidden' : 'inherit');
-          Ember.$(b.node).css('visibility', shouldHideB ? 'hidden' : 'inherit');
-
-          return b;
     });
 
-  }.on('didRender')
+    sortedMilestones.get().map((obj, index, arr) => {
+      arr.slice(index + 1).forEach((obj2) => {
+        if (this._overlaps(obj, obj2)) {
+          obj.overlaps.push(obj2);
+          obj2.overlaps.push(obj);
+        }
+      });
+
+      return obj;
+
+    }).sort((a, b) => {
+      return (b.overlaps.length - a.overlaps.length) / Math.abs(b.overlaps.length - a.overlaps.length) || 0;
+
+    }).map((obj) => {
+      if (this._countVisualOverlaps(obj) > 0) {
+        this._hideMilestone(obj);
+      } else {
+        this._showMilestone(obj);
+      }
+
+      return obj;
+    });
+  }.on('didRender'),
+
+  _overlaps(a, b) {
+    return !(a.x[1] < b.x[0]) || (b.x[1] < a.x[0]);
+  },
+
+  _countVisualOverlaps(obj) {
+    return obj.overlaps.reduce((a, b) => {
+      return a + (this._isHidden(b) ? 0 : 1);
+    }, 0);
+  },
+
+  _hideMilestone(obj) {
+    Ember.$(obj.node).css('visibility','hidden');
+  },
+
+  _showMilestone(obj) {
+    Ember.$(obj.node).css('visibility','inherit');
+  },
+
+  _isHidden(obj) {
+    return Ember.$(obj.node).css('visibility') == 'hidden';
+  }
 });

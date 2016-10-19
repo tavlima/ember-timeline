@@ -9,8 +9,8 @@ Demo: https://ember-timeline-demo.firebaseapp.com
 * or write another slider plugin with native support for pan/pinch (so that no translation is required)
 * Improve the color picker layout on wide screens
 * Figure out a better way to layout the "tableform" on small screens ([some ideas from a similar problem](https://css-tricks.com/responsive-data-table-roundup))
-* Improve the label collision detection algorithm and hidding strategy
-
+* ~~Improve the label collision detection algorithm and hidding strategy~~
+* Replace the beam implementation for something more performant (jsPlumb?)
 
 ## Prerequisites
 
@@ -59,4 +59,3 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
