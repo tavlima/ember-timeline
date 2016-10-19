@@ -2,6 +2,16 @@
 
 Demo: https://ember-timeline-demo.firebaseapp.com
 
+## Backlog and ideas
+
+* Tests!!
+* Handle pan/pinch on the zoomed timeline using Hammer.js, translate to mouse/wheel events and push them to the slider...
+* or write another slider plugin with native support for pan/pinch (so that no translation is required)
+* Improve the color picker layout on wide screens
+* Figure out a better way to layout the "tableform" on small screens ([some ideas from a similar problem](https://css-tricks.com/responsive-data-table-roundup))
+* Improve the label collision detection algorithm and hidding strategy
+
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
